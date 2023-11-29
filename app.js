@@ -30,6 +30,8 @@ app.use(express.static('public'));
 // Connect to MySQL database
 const connection = require('./config/database');
 
+// Trust the Nginx proxy
+app.set('trust proxy', true);
 // Define routes for user registration, login, and other functionalities
 
 app.use('/api', Routes);
