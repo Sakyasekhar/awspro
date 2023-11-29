@@ -1,9 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const authRouter = require('./routes/auth'); // Import the auth router
 const Routes = require('./routes/api');
-const proRouter = require('./routes/projects');
+
 const session = require('express-session');
 
 const cookieParser = require("cookie-parser");
@@ -32,8 +31,7 @@ app.use(express.static('public'));
 const connection = require('./config/database');
 
 // Define routes for user registration, login, and other functionalities
-app.use('/api/auth', authRouter);
-app.use('/api', proRouter);
+
 app.use('/', Routes);
 
 // // Start the Express server
