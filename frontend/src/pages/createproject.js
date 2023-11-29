@@ -20,8 +20,8 @@ const CreateProject = () => {
   useEffect(() => {
 
     const fetchProjects = async () => {
-      const projectsResponse = await axios.get(`${API_URL}/myprojects/${userid}`);
-      const requestsResponse = await axios.get(`${API_URL}/projectrequests/${userid}`);
+      const projectsResponse = await axios.get(`${API_URL}/api/myprojects/${userid}`);
+      const requestsResponse = await axios.get(`${API_URL}/api/projectrequests/${userid}`);
 
       // Assuming the response contains an array of projects with an order property
       const orderedProjects = projectsResponse.data.sort((a, b) => a.order - b.order);
@@ -41,7 +41,7 @@ const CreateProject = () => {
         status: status,
       };
 
-      const response = await axios.post(`${API_URL}/createproject`, projectData);
+      const response = await axios.post(`${API_URL}/api/createproject`, projectData);
 
       console.log('Project created successfully:', response.data);
 
@@ -56,7 +56,7 @@ const CreateProject = () => {
   const handleAcceptRequest = async (requestId) => {
     try {
       // Send a request to the server to accept the project request
-      await axios.post(`${API_URL}/projectrequests/${requestId}/accept`);
+      await axios.post(`${API_URL}/api/projectrequests/${requestId}/accept`);
 
       // Refresh the list of project requests
       const updatedRequests = requests.filter((request) => request.id !== requestId);
@@ -70,7 +70,7 @@ const CreateProject = () => {
   const handleRejectRequest = async (requestId) => {
     try {
       // Send a request to the server to reject the project request
-      await axios.post(`${API_URL}/projectrequests/${requestId}/reject`);
+      await axios.post(`${API_URL}/api/projectrequests/${requestId}/reject`);
 
       // Refresh the list of project requests
       const updatedRequests = requests.filter((request) => request.id !== requestId);
@@ -84,7 +84,7 @@ const CreateProject = () => {
   const handleDeleteProject = async (projectId) => {
     try {
       // Send a request to the server to delete the project
-      await axios.delete(`${API_URL}/projects/${projectId}`);
+      await axios.delete(`${API_URL}/api/projects/${projectId}`);
 
       // Refresh the list of projects
       const updatedProjects = projects.filter((project) => project.id !== projectId);

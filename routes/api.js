@@ -5,6 +5,7 @@ const multer = require('multer');
 const upload = multer();
 const filemanager = require('../models/aws'); // Import your AWS file manager
 const Project = require('../models/Project');
+const bcrypt = require('bcrypt');
 
 // User registration route
 router.post('/register', async (req, res) => {
@@ -86,7 +87,7 @@ router.put('/profile/:userid', async (req, res) => {
 
 
 // Get project members
-router.get('/projects/:projectId/members', async (req, res) => {
+router.get('/:projectId/members', async (req, res) => {
   const projectId = req.params.projectId;
   // console.log(projectId);
 
@@ -107,7 +108,7 @@ try {
 });
 
 // Endpoint to get shared files for a project
-router.get('/projects/:projectId/files', async (req, res) => {
+router.get('/:projectId/files', async (req, res) => {
   const projectId = req.params.projectId;
 
   try {
@@ -122,7 +123,7 @@ router.get('/projects/:projectId/files', async (req, res) => {
 
 // Endpoint to handle file downloads
 // Endpoint to handle file downloads
-router.get('/projects/:projectId/:sender/files/:fileId/download', async (req, res) => {
+router.get('/:projectId/:sender/files/:fileId/download', async (req, res) => {
   const projectId = req.params.projectId;
   const sender = req.params.sender;
   const fileId = req.params.fileId;
@@ -142,7 +143,7 @@ router.get('/projects/:projectId/:sender/files/:fileId/download', async (req, re
 });
 
 
-router.post('/projects/:projectId/:userid/files/share', upload.single('file'), async (req, res) => {
+router.post('/:projectId/:userid/files/share', upload.single('file'), async (req, res) => {
   const projectId = req.params.projectId;
   const sender = req.params.userid; // Replace with actual sender information
   const file = req.file; // This contains information about the uploaded file

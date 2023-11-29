@@ -24,7 +24,7 @@ const Register = () => {
       };
 
       // Send registration data to the API endpoint
-      const response = await axios.post(`${API_URL}/register`, userDetails);
+      const response = await axios.post(`${API_URL}/api/register`, userDetails);
 
 
       // Handle successful registration

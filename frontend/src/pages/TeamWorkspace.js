@@ -14,7 +14,7 @@ const TeamWorkspace = () => {
 
   const fetchSharedFiles = async () => {
     try {
-      const response = await axios.get(`${API_URL}/${projectId}/files`);
+      const response = await axios.get(`${API_URL}/api/${projectId}/files`);
       setSharedFiles(response.data);
     } catch (error) {
       console.error('Error fetching shared files:', error.message);
@@ -24,7 +24,7 @@ const TeamWorkspace = () => {
   useEffect(() => {
     const fetchProjectMembers = async () => {
       try {
-        const response = await axios.get(`${API_URL}/${projectId}/members`);
+        const response = await axios.get(`${API_URL}/api/${projectId}/members`);
         setProjectMembers(response.data);
       } catch (error) {
         console.error('Error fetching project members:', error.message);
@@ -41,7 +41,7 @@ const TeamWorkspace = () => {
   const handleDownload = async (fileId, sender,fileName) => {
     try {
       // Make a request to the server to get the file download URL
-      const response = await axios.get(`${API_URL}/${fileId}/${sender}/files/${fileName}/download`, {
+      const response = await axios.get(`${API_URL}/api/${fileId}/${sender}/files/${fileName}/download`, {
         responseType: 'blob',
       });
   
@@ -67,7 +67,7 @@ const TeamWorkspace = () => {
       formData.append('file', selectedFile);
 
       // Make a request to the server to share the file
-      await axios.post(`${API_URL}/${projectId}/${username}/files/share`, formData);
+      await axios.post(`${API_URL}/api/${projectId}/${username}/files/share`, formData);
 
       // Update the shared files list after sharing
       fetchSharedFiles();

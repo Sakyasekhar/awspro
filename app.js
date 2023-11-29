@@ -32,7 +32,7 @@ const connection = require('./config/database');
 
 // Define routes for user registration, login, and other functionalities
 
-app.use('/', Routes);
+app.use('/api', Routes);
 
 // // Start the Express server
 const port = process.env.PORT || 3001;
