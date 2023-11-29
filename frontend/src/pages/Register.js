@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import "../styles/Register.css";
-
+import { API_URL } from "../utils";
 const Register = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -24,7 +24,7 @@ const Register = () => {
       };
 
       // Send registration data to the API endpoint
-      const response = await axios.post('http://localhost:3001/api/auth/register', userDetails);
+      const response = await axios.post(`${API_URL}/api/auth/register`, userDetails);
 
 
       // Handle successful registration

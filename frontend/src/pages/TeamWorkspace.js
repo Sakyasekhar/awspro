@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import '../styles/TeamWorkspace.css';
 import '../styles/FileSharingSection.css';
-
+import { API_URL } from "../utils";
 const TeamWorkspace = () => {
   const userdetails = localStorage.getItem("user") !== undefined ? JSON.parse(localStorage.getItem("user")) : null;
   const username = userdetails.user.name;
@@ -14,7 +14,7 @@ const TeamWorkspace = () => {
 
   const fetchSharedFiles = async () => {
     try {
-      const response = await axios.get(`http://localhost:3001/projects/${projectId}/files`);
+      const response = await axios.get(`${API_URL}/projects/${projectId}/files`);
       setSharedFiles(response.data);
     } catch (error) {
       console.error('Error fetching shared files:', error.message);
@@ -24,7 +24,7 @@ const TeamWorkspace = () => {
   useEffect(() => {
     const fetchProjectMembers = async () => {
       try {
-        const response = await axios.get(`http://localhost:3001/projects/${projectId}/members`);
+        const response = await axios.get(`${API_URL}/projects/${projectId}/members`);
         setProjectMembers(response.data);
       } catch (error) {
         console.error('Error fetching project members:', error.message);
@@ -41,7 +41,7 @@ const TeamWorkspace = () => {
   const handleDownload = async (fileId, sender,fileName) => {
     try {
       // Make a request to the server to get the file download URL
-      const response = await axios.get(`http://localhost:3001/projects/${fileId}/${sender}/files/${fileName}/download`, {
+      const response = await axios.get(`${API_URL}/projects/${fileId}/${sender}/files/${fileName}/download`, {
         responseType: 'blob',
       });
   
@@ -67,7 +67,7 @@ const TeamWorkspace = () => {
       formData.append('file', selectedFile);
 
       // Make a request to the server to share the file
-      await axios.post(`http://localhost:3001/projects/${projectId}/${username}/files/share`, formData);
+      await axios.post(`${API_URL}/projects/${projectId}/${username}/files/share`, formData);
 
       // Update the shared files list after sharing
       fetchSharedFiles();

@@ -4,6 +4,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { useUser } from '../components/UserContext';
 import { createBrowserHistory } from 'history'; // Import createBrowserHistory
+import { API_URL } from "../utils";
 const history = createBrowserHistory();
 
 const Login = () => {
@@ -14,7 +15,7 @@ const Login = () => {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post('http://localhost:3001/api/auth/login', { email, password });
+      const response = await axios.post(`${API_URL}/api/auth/login`, { email, password });
 
       console.log('Login successful!', response.data);
 

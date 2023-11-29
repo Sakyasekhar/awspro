@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { API_URL } from "../utils";
 import Navbar from '../components/navbar';
 import "../styles/Profile.css"
 const Profile = () => {
@@ -14,7 +15,7 @@ const Profile = () => {
     const fetchProfileData = async () => {
       try {
         const userId = localStorage.getItem("user") !== undefined ? JSON.parse(localStorage.getItem("user")).user.id : null;
-        const response = await axios.get(`http://localhost:3001/profile/${userId}`);
+        const response = await axios.get(`${API_URL}/profile/${userId}`);
         setProfile(response.data);
       } catch (error) {
         console.error('Error fetching profile:', error.message);
@@ -37,7 +38,7 @@ const Profile = () => {
     // Update profile data on the server
     try {
       
-      await axios.put(`http://localhost:3001/profile/${userid}`, updatedProfile);
+      await axios.put(`${API_URL}/profile/${userid}`, updatedProfile);
 
       // Update local profile state with the updated details
       setProfile({ ...profile, ...updatedProfile });
