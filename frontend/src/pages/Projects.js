@@ -17,7 +17,7 @@ const Projects = () => {
   // Get all projects
   useEffect(() => {
     const fetchProjects = async () => {
-      const res = await axios.get(`${API_URL}/api/projects/${userid}`);
+      const res = await axios.get(`${API_URL}/projects/${userid}`);
       // Assuming the response contains an array of projects with an order property
       const orderedProjects = res.data.sort((a, b) => a.order - b.order);
       setProjects(orderedProjects);
@@ -32,7 +32,7 @@ const Projects = () => {
       const freelancerId = userid; // Replace this with the actual user ID or details
   
       // Send a request to the server to create a join request
-      await axios.post(`${API_URL}/api/projects/${projectId}/join`, { freelancerId });
+      await axios.post(`${API_URL}/projects/${projectId}/join`, { freelancerId });
   
       // Update the projects list after requesting to join
       const updatedProjects = projects.map((project) =>
@@ -52,7 +52,7 @@ const Projects = () => {
 
   const fetchJoinedProjects = async () => {
     try {
-      const response = await axios.get(`${API_URL}/api/requestedprojects/${userid}`);
+      const response = await axios.get(`${API_URL}/requestedprojects/${userid}`);
       setJoinedProjects(response.data);
     } catch (error) {
       console.error('Error fetching joined projects:', error.message);
