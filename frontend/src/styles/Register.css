@@ -1,0 +1,50 @@
+.register-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .register-container h1 {
+    text-align: center;
+    color: #333;
+  }
+  
+  .form-input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+  }
+  
+  .skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .skills-container input[type="checkbox"] {
+    margin-right: 5px;
+  }
+  
+  .skills-container label {
+    display: block;
+  }
+  
+  .register-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #151516; /* Adjust the color as needed */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .register-button:hover {
+    background-color: #2e2f30; /* Adjust the color as needed */
+  }
+  
+  

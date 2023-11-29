@@ -1,0 +1,80 @@
+.create-project-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .project-list,
+  .project-requests{
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+  .create-project-form {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .project-box,
+  .request-box {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    display:inline-block;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width:300px;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .button-container button {
+    margin-right: 5px;
+  }
+  
+  .create-project-form form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .create-project-form label {
+    margin-bottom: 5px;
+  }
+  
+  .create-project-form input,
+  .create-project-form textarea,
+  .create-project-form select {
+    margin-bottom: 10px;
+    padding: 8px;
+  }
+  
+  .create-project-form button {
+    padding: 10px;
+    background-color: #181918;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    width:150px;
+  }
+  
+  .create-project-form button:hover {
+    background-color: #303030;
+  }
+
+  .heading{
+    display:block;
+  }
+
+  .projectdata{
+    display:flex;
+    flex-wrap: wrap;
+    gap:50px;
+  }

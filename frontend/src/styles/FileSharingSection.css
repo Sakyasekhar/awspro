@@ -1,0 +1,12 @@
+/* FileSharingSection.css */
+
+.file-sharing-section {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  background-color: #fff;
+  padding: 10px;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
+}
+
+/* Add more styling as needed */

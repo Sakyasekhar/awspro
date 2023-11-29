@@ -1,0 +1,61 @@
+/* Add this to your existing Projects.css or create a new CSS file */
+
+.container {
+    max-width: 1150px;
+    margin: 0 auto;
+  }
+  
+  .project-box-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap:50px;
+  }
+  
+  .project-box {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 20px;
+    width:300px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .project-box p {
+    margin: 0;
+  }
+  
+  .project-box div {
+    margin-top: 10px;
+    text-align:center;
+  }
+  
+  /* Additional styling for buttons and links if needed */
+  button {
+    background-color: #1d1e1d;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin:10px;
+  }
+  
+  button:hover {
+    background-color: #2d302d;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #717577;
+  }
+  
+  a:hover {
+    color: #9ca2a7;
+  }
+ .joined-box{
+  text-align: center;
+ }

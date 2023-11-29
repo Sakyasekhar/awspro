@@ -1,0 +1,22 @@
+/* TeamWorkspace.css */
+
+.team-workspace-container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .members-list {
+    width: 20%;
+    padding: 10px;
+    border-right: 1px solid #ccc;
+    overflow-y: auto;
+  }
+  
+  .shared-files-section {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+  }
+  
+  /* Add more styling as needed */
+  

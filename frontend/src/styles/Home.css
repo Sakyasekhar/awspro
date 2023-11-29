@@ -1,0 +1,20 @@
+.home-container {
+    position: relative;
+    background: url('https://img.freepik.com/premium-photo/female-freelance-photographer-workspace-with-camera-notebook-copy-space-black-background_67155-19838.jpg') center/cover no-repeat;
+    height: 85vh;
+    color: white;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .home-container h1 {
+    margin-top: 100px; /* Adjust as needed */
+  }
+  
+  .home-container p {
+    font-size: 18px;
+    margin-top: 20px;
+  }
+  
+  /* Add styles for Navbar if needed */
+  

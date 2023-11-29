@@ -1,0 +1,72 @@
+/* Basic styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Profile container styling */
+  .profile-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  /* Headings styling */
+  h2 {
+    color: #333;
+  }
+  
+  /* Form styling */
+  form {
+    display: grid;
+    gap: 15px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  input,
+  textarea {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Button styling */
+  button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Profile details styling */
+  div > p {
+    margin-bottom: 10px;
+  }
+  
+  /* Edit button styling */
+  button:last-child {
+    background-color: #262627;
+  }
+  
+  button:last-child:hover {
+    background-color: #3e3f3f;
+  }
+  
